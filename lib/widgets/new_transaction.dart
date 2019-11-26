@@ -31,10 +31,11 @@ class NewTransaction extends StatelessWidget {
                 controller: amountController,
               ),
               FlatButton(
-                child: Text('Add Transaction'),
-                onPressed: addTx(titleController.text, amountController.text,),
-                textColor: Colors.purple,
-              )
+                  child: Text('Add Transaction'),
+                  textColor: Colors.purple,
+                  onPressed: () {
+                    addTx(titleController.text, amountController.text);
+                  })
             ],
           ),
         ));
