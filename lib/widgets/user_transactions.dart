@@ -17,6 +17,26 @@ class _UserTransactionsState extends State<UserTransactions> {
         id: 't2',
         title: 'Weekly Groceries',
         amount: 16.99,
+        date: DateTime.now()),
+    Transaction(
+        id: 't3',
+        title: 'Weekly Groceries',
+        amount: 16.99,
+        date: DateTime.now()),
+    Transaction(
+        id: 't4',
+        title: 'Weekly Groceries',
+        amount: 16.99,
+        date: DateTime.now()),
+    Transaction(
+        id: 't5',
+        title: 'Weekly Groceries',
+        amount: 16.99,
+        date: DateTime.now()),
+    Transaction(
+        id: 't6',
+        title: 'Weekly Groceries',
+        amount: 16.99,
         date: DateTime.now())
   ];
 
