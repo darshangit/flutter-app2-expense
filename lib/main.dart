@@ -14,6 +14,11 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.lightBlue,
           accentColor: Colors.red,
           fontFamily: 'Quicksand',
+          textTheme: ThemeData.light().textTheme.copyWith(
+              title: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18)),
           appBarTheme: AppBarTheme(
               textTheme: ThemeData.light().textTheme.copyWith(
                   title: TextStyle(
