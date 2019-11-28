@@ -21,6 +21,8 @@ class _NewTransactionState extends State<NewTransaction> {
     if (enteredTitle.isNotEmpty && enteredAmount.isNotEmpty) {
       widget.addTx(titleController.text, amountController.text);
     }
+
+    Navigator.of(context).pop();
   }
 
   @override
