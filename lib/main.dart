@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Personal Expense Backend',
       theme: ThemeData(
-          primarySwatch: Colors.lightBlue,
-          accentColor: Colors.red,
+          primarySwatch: Colors.indigo,
+          accentColor: Colors.indigoAccent,
           fontFamily: 'Quicksand',
           textTheme: ThemeData.light().textTheme.copyWith(
               title: TextStyle(
