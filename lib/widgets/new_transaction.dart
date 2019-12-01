@@ -19,8 +19,12 @@ class _NewTransactionState extends State<NewTransaction> {
     final enteredTitle = _titleController.text;
     final enteredAmount = _amountController.text;
 
-    if (enteredTitle.isNotEmpty && enteredAmount.isNotEmpty) {
-      widget.addTx(_titleController.text, _amountController.text);
+    if (enteredTitle.isNotEmpty &&
+        enteredAmount.isNotEmpty &&
+        _selectedDate != null) {
+      widget.addTx(_titleController.text, _amountController.text,_selectedDate);
+    } else {
+      return;
     }
 
     Navigator.of(context).pop();
