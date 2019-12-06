@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import './widgets/transaction_list.dart';
 import './widgets/new_transaction.dart';
 import 'models/transaction.dart';
@@ -45,35 +44,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<Transaction> _userTransactions = [
-    // Transaction(
-    //     id: 't1', title: 'New Shoes', amount: 69.99, date: DateTime.now()),
-    // Transaction(
-    //     id: 't2',
-    //     title: 'Weekly Groceries',
-    //     amount: 16.99,
-    //     date: DateTime.now()),
-    // Transaction(
-    //     id: 't3',
-    //     title: 'Weekly Groceries',
-    //     amount: 16.99,
-    //     date: DateTime.now()),
-    // Transaction(
-    //     id: 't4',
-    //     title: 'Weekly Groceries',
-    //     amount: 16.99,
-    //     date: DateTime.now()),
-    // Transaction(
-    //     id: 't5',
-    //     title: 'Weekly Groceries',
-    //     amount: 16.99,
-    //     date: DateTime.now()),
-    // Transaction(
-    //     id: 't6',
-    //     title: 'Weekly Groceries',
-    //     amount: 16.99,
-    //     date: DateTime.now())
-  ];
+  final List<Transaction> _userTransactions = [];
 
   bool _showChart = false;
 
@@ -149,8 +120,9 @@ class _MyHomePageState extends State<MyHomePage> {
             .7,
         child: TransactionList(_userTransactions, _deleteTransaction));
 
-    final pageBody = SafeArea(child: SingleChildScrollView(
-      child: Column(
+    final pageBody = SafeArea(
+      child: SingleChildScrollView(
+          child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           if (isLandscape)
@@ -158,7 +130,10 @@ class _MyHomePageState extends State<MyHomePage> {
               //dont use curly braces
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text('Show Chart', style: Theme.of(context).textTheme.title,),
+                Text(
+                  'Show Chart',
+                  style: Theme.of(context).textTheme.title,
+                ),
                 Switch.adaptive(
                     activeColor: Theme.of(context).accentColor,
                     value: _showChart,
@@ -187,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Chart(_recentTransactions))
                 : txListWidget
         ],
-    )),
+      )),
     );
     return Platform.isIOS
         ? CupertinoPageScaffold(
